@@ -2,13 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: clamp(500px,100,100%);
 }
 
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #101218;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;
 }
 
 header{
@@ -20,6 +20,8 @@ header{
     font-size: 0.9rem;
 }
 nav{
+    position: sticky;
+    top: 0;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -42,6 +44,7 @@ div{
     align-items: center;
     flex-grow: 0;
     gap: 1rem;
+    z-index: 10;
 }
 
 nav a:any-link{
@@ -61,22 +64,24 @@ nav a:any-link{
 }
 
 main{
-    flex-grow: 10;
+    /* flex-grow: 10; */
     height: 100%;
 }
 
 .main1{
     text-align: center;
-    height: 20vh;
+    height: min(120px,20vh);
 }
 .main1 img{
-    height: 100%;
-    scale: 2;
-    z-index: 0;
+    width: min(100% , 300px);
+    position: relative;
+    right: 0;
+    scale: 1;
+    z-index: -10;
 }
 
 .main2{
-    height: 20vh;
+    height: min(120px,20vh);
 }
 .main2-container{
     margin-top: 0;
@@ -84,17 +89,17 @@ main{
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    height: 100%;
-    width: 100%;
+    height: min(80px,100%);
+    width: auto;
 }
 
 .search-container{
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     height: 100%;
-    width: 40rem;
+    width: min(100%,600px);
     justify-content: center;
     padding: 0.5rem;
     z-index: 1;
@@ -108,7 +113,8 @@ main{
 .search-container-elements{
     padding: 0.6rem;
     flex-grow: 0;
-    height: 100%;
+    /* height: 100%; */
+    height: max(46px,10%);
     background-color: #3f4454;
     place-content: center;
     /* text-align: center; */
@@ -120,7 +126,7 @@ main{
     padding-left: 0.9rem;
 }
 .search-container-elements:nth-child(2){
-    height: 100%;
+    /* height: max(46px,50%); */
     flex-grow: 1;
 }
 .search-container-elements:nth-child(2):focus-visible{
@@ -209,7 +215,7 @@ footer{
 .foot2-containers{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .foot2-container1 a{
@@ -222,8 +228,15 @@ footer{
     border-bottom: 1px solid white;
 }
 
-@media screen and (min-width:576px){
-    .main2-container{
+@media screen and (min-width:320px){
+    html{
         width: 100vw;
+        height: 100vh;
+    }
+    body{
+        flex-grow: 1;
+    }
+    .tr{
+        z-index: 2;
     }
 }
