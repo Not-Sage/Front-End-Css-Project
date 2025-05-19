@@ -11,6 +11,6 @@ This repository contains front-end development projects built as part of my jour
 **Description:**  
 A clean, responsive clone of the Google homepage using only HTML and CSS. This project focuses on replicating Google’s layout and design, including the header, search bar, language options, and footer.
 
- <a href="https://google-clone-rose-alpha.vercel.app/"><strong>➥ Live Demo</strong></a> 
+ <a href="https://google-clone-rose-alpha.vercel.app/" target = "_main"><strong>➥ Live Demo</strong></a> 
  
  </div>
